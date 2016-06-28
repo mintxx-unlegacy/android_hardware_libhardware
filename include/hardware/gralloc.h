@@ -158,6 +158,17 @@ enum {
 #endif
 };
 
+enum {
+    /* FIXME: this only exists to work-around some issues with
+     * the video and camera frameworks. don't implement unless
+     * you know what you're doing.
+     */
+    GRALLOC_MODULE_PERFORM_CREATE_HANDLE_FROM_BUFFER = 0x080000001,
+    GRALLOC_MODULE_PERFORM_FREE_HANDLE,
+    GRALLOC_MODULE_PERFORM_GET_MALI_DATA,
+    GRALLOC_MODULE_GET_MALI_INTERNAL_BUF_OFF
+};
+
 /*****************************************************************************/
 
 /**
