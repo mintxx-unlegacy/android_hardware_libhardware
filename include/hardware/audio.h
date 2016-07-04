@@ -593,7 +593,7 @@ struct audio_hw_device {
     void (*close_output_stream)(struct audio_hw_device *dev,
                                 struct audio_stream_out* stream_out);
                                 
-#ifndef SPRD_HARDWARE
+
     /** This method creates and opens the audio hardware output
      *  for broadcast stream */
     int (*open_broadcast_stream)(struct audio_hw_device *dev, uint32_t devices,
@@ -604,7 +604,7 @@ struct audio_hw_device {
 
     void (*close_broadcast_stream)(struct audio_hw_device *dev,
                                    struct audio_broadcast_stream *out);
-#endif
+
 
     /** This method creates and opens the audio hardware input stream */
     int (*open_input_stream)(struct audio_hw_device *dev,
