@@ -615,7 +615,7 @@ struct audio_hw_device {
     void (*close_output_stream)(struct audio_hw_device *dev,
                                 struct audio_stream_out* stream_out);
                                 
-#ifdef SPRD_HWC
+#ifdef MR0_AUDIO_BLOB
     /** This method creates and opens the audio hardware output
      *  for broadcast stream */
     int (*open_broadcast_stream)(struct audio_hw_device *dev, uint32_t devices,
