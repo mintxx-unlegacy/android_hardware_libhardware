@@ -606,18 +606,18 @@ struct audio_hw_device {
                                    struct audio_broadcast_stream *out);
 
 
-    /** This method creates and opens the audio hardware input stream */
-    int (*open_input_stream)(struct audio_hw_device *dev,
-                             audio_io_handle_t handle,
-                             audio_devices_t devices,
-                             struct audio_config *config,
-                             struct audio_stream_in **stream_in,
-                             audio_input_flags_t flags,
-                             const char *address,
-                             audio_source_t source);
+#ifdef MR0_AUDIO_BLOB
+    /** This method creates and opens the audio hardware output
+     *  for broadcast stream */
+    int (*open_broadcast_stream)(struct audio_hw_device *dev, uint32_t devices,
+                                 int format, uint32_t channels,
+                                 uint32_t sample_rate,
+                                 uint32_t audio_source,
+                                 struct audio_broadcast_stream **out);
 
-    void (*close_input_stream)(struct audio_hw_device *dev,
-                               struct audio_stream_in *stream_in);
+    void (*close_broadcast_stream)(struct audio_hw_device *dev,
+                                   struct audio_broadcast_stream *out);
+#endif
 
     /** This method dumps the state of the audio hardware */
     int (*dump)(const struct audio_hw_device *dev, int fd);
