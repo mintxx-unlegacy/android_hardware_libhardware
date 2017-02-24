@@ -189,6 +189,8 @@ typedef struct {
     bthf_clcc_cmd_callback          clcc_cmd_cb;
     bthf_unknown_at_cmd_callback    unknown_at_cmd_cb;
     bthf_key_pressed_cmd_callback   key_pressed_cmd_cb;
+    bthf_bind_cmd_callback          bind_cmd_cb;
+    bthf_biev_cmd_callback          biev_cmd_cb;
 } bthf_callbacks_t;
 
 /** Network Status */
@@ -230,6 +232,11 @@ typedef enum {
     BTHF_CALL_MPTY_TYPE_SINGLE = 0,
     BTHF_CALL_MPTY_TYPE_MULTI
 } bthf_call_mpty_type_t;
+
+typedef enum {
+    BTHF_HF_INDICATOR_STATE_DISABLED = 0,
+    BTHF_HF_INDICATOR_STATE_ENABLED
+} bthf_hf_indicator_status_t;
 
 typedef enum {
     BTHF_CALL_ADDRTYPE_UNKNOWN = 0x81,
