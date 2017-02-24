@@ -65,6 +65,14 @@ typedef enum
    BTHF_WBS_YES
 }bthf_wbs_config_t;
 
+/* BIND type*/
+typedef enum
+{
+   BTHF_BIND_SET,
+   BTHF_BIND_READ,
+   BTHF_BIND_TEST
+}bthf_bind_type_t;
+
 /* CHLD - Call held handling */
 typedef enum
 {
